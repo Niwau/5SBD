@@ -1,0 +1,2876 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/15/2024 9:44:12 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-CLKC1G2"
+  DTS:CreatorName="DESKTOP-CLKC1G2\Guilherme"
+  DTS:Description="Descrição de Pacotes SSIS"
+  DTS:DTSID="{FD3EFE87-0482-4EA2-AED5-FD12ACD4FBEC}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.5"
+  DTS:LocaleID="1046"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="pacote"
+  DTS:VersionGUID="{947C196F-270F-4D20-ABB0-52C0128BC381}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F4017A05-A31D-44EA-96FA-58A4888F533B}"
+      DTS:ObjectName="DestinationConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=(local);Initial Catalog=master;Provider=SQLOLEDB;Integrated Security=SSPI;Auto Translate=false;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{05C5B6D8-7161-4799-8E5D-43631523AEC3}"
+      DTS:ObjectName="SourceConnectionFlatFile">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1046"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\Users\Guilherme\Downloads\sample_products.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ID"
+              DTS:DTSID="{6BE55CA2-F67C-45F0-94C1-91D386D22B8B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Type"
+              DTS:DTSID="{289A1CCC-D63B-4CA9-9214-14A7F4410E78}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SKU"
+              DTS:DTSID="{3E88E90A-BDEC-4677-B735-9EC8F5B107CE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Name"
+              DTS:DTSID="{53D9485C-3066-4A70-A87E-EFF063399443}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Published"
+              DTS:DTSID="{CA7AB2B2-6618-4C98-BEBA-1C4029057179}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Is featured?&quot;"
+              DTS:DTSID="{F8766BE6-5669-41E1-B72F-CA6E83D6C2EC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Visibility in catalog&quot;"
+              DTS:DTSID="{0897817A-9237-46F5-9DDC-7C368C00AE03}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Short description&quot;"
+              DTS:DTSID="{BED50476-4DCF-4553-A7D6-A836862B5D70}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Description"
+              DTS:DTSID="{C22D135C-8B6B-4D4C-88AE-E09F9D25F9F0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Date sale price starts&quot;"
+              DTS:DTSID="{427F85BC-C976-4E01-AB16-EDD674E7453B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Date sale price ends&quot;"
+              DTS:DTSID="{422A87A6-3EC8-49B1-8625-5284EE3FFAF3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Tax status&quot;"
+              DTS:DTSID="{EB5A104E-CBDB-4A9F-A938-56DCFF2B8370}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Tax class&quot;"
+              DTS:DTSID="{69BCC241-56F4-4C1A-904E-A572CA33D0FE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;In stock?&quot;"
+              DTS:DTSID="{AD9055FB-088E-446B-8CF1-8A9656102966}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Stock"
+              DTS:DTSID="{67ABA16B-0C7B-4489-A202-ACF1E1A348C3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Backorders allowed?&quot;"
+              DTS:DTSID="{277F7E9E-4AEE-4327-BB1C-E25583AF2092}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Sold individually?&quot;"
+              DTS:DTSID="{CC647DDA-ED83-4EF8-96F7-67B56EB65083}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Weight (lbs)&quot;"
+              DTS:DTSID="{C3F1A60E-DE08-48A7-AE00-CA47FFE2971E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Length (in)&quot;"
+              DTS:DTSID="{40082B29-A4B5-48A1-BBA5-540FF9B7C06D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Width (in)&quot;"
+              DTS:DTSID="{F80EC1FE-04DA-4F2A-AD18-63FCAB10C7E2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Height (in)&quot;"
+              DTS:DTSID="{2146469B-C351-422E-81DE-852BB547E82C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Allow customer reviews?&quot;"
+              DTS:DTSID="{4E37DB78-4295-43FE-87A1-ADE7F9E75A80}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Purchase note&quot;"
+              DTS:DTSID="{638AA5FE-C397-4D52-BE08-00D879A6689C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Sale price&quot;"
+              DTS:DTSID="{49978DCB-550A-480D-BCF1-216EE977D517}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Regular price&quot;"
+              DTS:DTSID="{4DB98F62-489F-4AD2-87C4-09D8FF3DD77E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Categories"
+              DTS:DTSID="{1313BB94-92B7-416E-B880-CD919B11837D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tags"
+              DTS:DTSID="{ED83F681-CFDF-4661-965F-6E9CF2029DEA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Shipping class&quot;"
+              DTS:DTSID="{24EFB826-CB2A-4AA6-AF43-734B57C83B63}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Images"
+              DTS:DTSID="{3E59EFA4-2D84-4E2E-BB34-B11C82CDF574}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Download limit&quot;"
+              DTS:DTSID="{DE26847D-1878-4C37-9B3A-1337C3598B71}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Download expiry days&quot;"
+              DTS:DTSID="{8CC43B6E-B329-4A38-9D1E-621F2E89164E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Parent"
+              DTS:DTSID="{DB8E91EB-686E-4537-B153-92005D76958F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Grouped products&quot;"
+              DTS:DTSID="{7DFC50C1-2A52-4888-8483-700DDC98BE24}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Upsells"
+              DTS:DTSID="{2607991F-BB1B-4313-A339-829506BBC0BD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Cross-sells"
+              DTS:DTSID="{C83063D5-0440-4B8A-9CCE-FB7761AC7CFF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;External URL&quot;"
+              DTS:DTSID="{E9CBF10B-7B8E-4A78-AC25-E2F34EE64471}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Button text&quot;"
+              DTS:DTSID="{8BBED02C-0C3D-4569-92D7-4BAC388D7D8C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Position"
+              DTS:DTSID="{0CAFA511-120D-4169-80C8-5F07C07ABF94}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Attribute 1 name&quot;"
+              DTS:DTSID="{14137243-EBE6-4619-AB3A-26AA5F8D46A5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Attribute 1 value(s)&quot;"
+              DTS:DTSID="{D37604C9-81D0-41C5-9B42-D709B1968122}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Attribute 1 visible&quot;"
+              DTS:DTSID="{16B76D88-3437-4C03-A1D8-895D636F992D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Attribute 1 global&quot;"
+              DTS:DTSID="{7863F25A-2D50-4C29-97BE-72968A3FC0BA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Attribute 2 name&quot;"
+              DTS:DTSID="{12EBC67B-2F2C-491C-A90C-16F8813279D1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Attribute 2 value(s)&quot;"
+              DTS:DTSID="{DF2DA64D-D91F-417E-A73B-81B66C33E31C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Attribute 2 visible&quot;"
+              DTS:DTSID="{03F9663E-BF32-48B4-969D-8A64E7C93E69}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Attribute 2 global&quot;"
+              DTS:DTSID="{231BB2C2-78C9-446E-81DA-49F640DC4D62}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Meta  _wpcom_is_markdown&quot;"
+              DTS:DTSID="{17A37B09-CB5C-4D7D-BC82-9CCA021BE5C1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Download 1 name&quot;"
+              DTS:DTSID="{D50BF09E-CA19-4C34-8795-32396B528A35}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Download 1 URL&quot;"
+              DTS:DTSID="{C7DC1010-B192-4A7C-9951-A6C07B1F573B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Download 2 name&quot;"
+              DTS:DTSID="{BF3C82B9-7FC8-47F7-8101-106476A8B227}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Download 2 URL&quot;"
+              DTS:DTSID="{7DACA9AC-08FD-4708-A8CE-251B94848DD4}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Tarefa Fluxo de Dados 1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{883401DC-D000-4731-A6FE-4EB70DA08BAA}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tarefa Fluxo de Dados 1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino OLE DB"
+              name="Destino - sample_products"
+              usesDispositions="true"
+              validateExternalMetadata="False"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[dbo].[sample_products]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input]"
+                  errorOrTruncationOperation="Inserir"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[ID]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ID"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[ID]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[ID]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[Type]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Type"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[Type]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[Type]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[SKU]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SKU"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[SKU]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[SKU]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[Name]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Name"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[Name]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[Name]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[Published]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Published"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[Published]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[Published]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[&quot;Is featured?&quot;]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Is featured?&quot;"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Is featured?&quot;]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Is featured?&quot;]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[&quot;Visibility in catalog&quot;]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Visibility in catalog&quot;"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Visibility in catalog&quot;]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Visibility in catalog&quot;]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[&quot;Short description&quot;]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Short description&quot;"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Short description&quot;]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Short description&quot;]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[Description]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Description"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[Description]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[Description]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[&quot;Date sale price starts&quot;]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Date sale price starts&quot;"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Date sale price starts&quot;]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Date sale price starts&quot;]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[&quot;Date sale price ends&quot;]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Date sale price ends&quot;"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Date sale price ends&quot;]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Date sale price ends&quot;]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[&quot;Tax status&quot;]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Tax status&quot;"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Tax status&quot;]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Tax status&quot;]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[&quot;Tax class&quot;]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Tax class&quot;"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Tax class&quot;]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Tax class&quot;]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[&quot;In stock?&quot;]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;In stock?&quot;"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;In stock?&quot;]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;In stock?&quot;]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[Stock]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Stock"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[Stock]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[Stock]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[&quot;Backorders allowed?&quot;]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Backorders allowed?&quot;"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Backorders allowed?&quot;]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Backorders allowed?&quot;]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[&quot;Sold individually?&quot;]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Sold individually?&quot;"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Sold individually?&quot;]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Sold individually?&quot;]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[&quot;Weight (lbs)&quot;]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Weight (lbs)&quot;"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Weight (lbs)&quot;]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Weight (lbs)&quot;]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[&quot;Length (in)&quot;]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Length (in)&quot;"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Length (in)&quot;]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Length (in)&quot;]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[&quot;Width (in)&quot;]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Width (in)&quot;"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Width (in)&quot;]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Width (in)&quot;]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[&quot;Height (in)&quot;]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Height (in)&quot;"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Height (in)&quot;]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Height (in)&quot;]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[&quot;Allow customer reviews?&quot;]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Allow customer reviews?&quot;"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Allow customer reviews?&quot;]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Allow customer reviews?&quot;]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[&quot;Purchase note&quot;]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Purchase note&quot;"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Purchase note&quot;]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Purchase note&quot;]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[&quot;Sale price&quot;]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Sale price&quot;"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Sale price&quot;]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Sale price&quot;]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[&quot;Regular price&quot;]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Regular price&quot;"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Regular price&quot;]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Regular price&quot;]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[Categories]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Categories"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[Categories]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[Categories]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[Tags]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Tags"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[Tags]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[Tags]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[&quot;Shipping class&quot;]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Shipping class&quot;"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Shipping class&quot;]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Shipping class&quot;]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[Images]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Images"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[Images]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[Images]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[&quot;Download limit&quot;]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Download limit&quot;"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Download limit&quot;]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Download limit&quot;]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[&quot;Download expiry days&quot;]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Download expiry days&quot;"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Download expiry days&quot;]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Download expiry days&quot;]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[Parent]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Parent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[Parent]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[Parent]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[&quot;Grouped products&quot;]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Grouped products&quot;"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Grouped products&quot;]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Grouped products&quot;]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[Upsells]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Upsells"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[Upsells]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[Upsells]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[Cross-sells]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Cross-sells"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[Cross-sells]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[Cross-sells]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[&quot;External URL&quot;]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;External URL&quot;"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;External URL&quot;]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;External URL&quot;]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[&quot;Button text&quot;]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Button text&quot;"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Button text&quot;]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Button text&quot;]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[Position]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Position"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[Position]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[Position]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[&quot;Attribute 1 name&quot;]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Attribute 1 name&quot;"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Attribute 1 name&quot;]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Attribute 1 name&quot;]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[&quot;Attribute 1 value(s)&quot;]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Attribute 1 value(s)&quot;"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Attribute 1 value(s)&quot;]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Attribute 1 value(s)&quot;]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[&quot;Attribute 1 visible&quot;]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Attribute 1 visible&quot;"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Attribute 1 visible&quot;]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Attribute 1 visible&quot;]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[&quot;Attribute 1 global&quot;]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Attribute 1 global&quot;"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Attribute 1 global&quot;]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Attribute 1 global&quot;]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[&quot;Attribute 2 name&quot;]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Attribute 2 name&quot;"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Attribute 2 name&quot;]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Attribute 2 name&quot;]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[&quot;Attribute 2 value(s)&quot;]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Attribute 2 value(s)&quot;"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Attribute 2 value(s)&quot;]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Attribute 2 value(s)&quot;]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[&quot;Attribute 2 visible&quot;]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Attribute 2 visible&quot;"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Attribute 2 visible&quot;]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Attribute 2 visible&quot;]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[&quot;Attribute 2 global&quot;]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Attribute 2 global&quot;"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Attribute 2 global&quot;]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Attribute 2 global&quot;]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[&quot;Meta  _wpcom_is_markdown&quot;]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Meta  _wpcom_is_markdown&quot;"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Meta  _wpcom_is_markdown&quot;]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Meta  _wpcom_is_markdown&quot;]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[&quot;Download 1 name&quot;]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Download 1 name&quot;"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Download 1 name&quot;]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Download 1 name&quot;]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[&quot;Download 1 URL&quot;]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Download 1 URL&quot;"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Download 1 URL&quot;]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Download 1 URL&quot;]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[&quot;Download 2 name&quot;]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Download 2 name&quot;"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Download 2 name&quot;]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Download 2 name&quot;]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].Columns[&quot;Download 2 URL&quot;]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Download 2 URL&quot;"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Download 2 URL&quot;]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Download 2 URL&quot;]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[ID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[Type]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Type" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[SKU]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="SKU" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[Name]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[Published]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Published" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Is featured?&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Is featured?&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Visibility in catalog&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Visibility in catalog&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Short description&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Short description&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[Description]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Description" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Date sale price starts&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Date sale price starts&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Date sale price ends&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Date sale price ends&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Tax status&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Tax status&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Tax class&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Tax class&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;In stock?&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;In stock?&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[Stock]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Stock" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Backorders allowed?&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Backorders allowed?&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Sold individually?&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Sold individually?&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Weight (lbs)&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Weight (lbs)&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Length (in)&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Length (in)&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Width (in)&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Width (in)&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Height (in)&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Height (in)&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Allow customer reviews?&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Allow customer reviews?&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Purchase note&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Purchase note&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Sale price&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Sale price&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Regular price&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Regular price&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[Categories]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Categories" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[Tags]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Tags" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Shipping class&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Shipping class&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[Images]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Images" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Download limit&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Download limit&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Download expiry days&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Download expiry days&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[Parent]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Parent" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Grouped products&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Grouped products&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[Upsells]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Upsells" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[Cross-sells]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Cross-sells" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;External URL&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;External URL&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Button text&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Button text&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[Position]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Position" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Attribute 1 name&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Attribute 1 name&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Attribute 1 value(s)&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Attribute 1 value(s)&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Attribute 1 visible&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Attribute 1 visible&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Attribute 1 global&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Attribute 1 global&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Attribute 2 name&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Attribute 2 name&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Attribute 2 value(s)&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Attribute 2 value(s)&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Attribute 2 visible&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Attribute 2 visible&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Attribute 2 global&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Attribute 2 global&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Meta  _wpcom_is_markdown&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Meta  _wpcom_is_markdown&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Download 1 name&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Download 1 name&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Download 1 URL&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Download 1 URL&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Download 2 name&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Download 2 name&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input].ExternalColumns[&quot;Download 2 URL&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Download 2 URL&quot;" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Outputs[Saída de Erro de Destino OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Destino OLE DB"
+                  synchronousInputId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Origem de Arquivo Simples;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;1"
+              description="Origem de Arquivo Simples"
+              localeId="1046"
+              name="Origem - sample_products_txt"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica se colunas de comprimento zero são tratadas como nulas."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome de uma coluna de saída que contém o nome do arquivo. Se nenhum nome for especificado, nenhuma coluna de saída contendo o nome de arquivo será gerada."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples]"
+                  name="Saída de Origem de Arquivo Simples">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[ID]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[ID]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[ID]"
+                      name="ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[Type]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Type]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[Type]"
+                      name="Type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[SKU]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[SKU]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[SKU]"
+                      name="SKU"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[Name]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Name]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[Name]"
+                      name="Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[Published]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Published]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[Published]"
+                      name="Published"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Is featured?&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Is featured?&quot;]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Is featured?&quot;]"
+                      name="&quot;Is featured?&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Visibility in catalog&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Visibility in catalog&quot;]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Visibility in catalog&quot;]"
+                      name="&quot;Visibility in catalog&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Short description&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Short description&quot;]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Short description&quot;]"
+                      name="&quot;Short description&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[Description]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Description]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[Description]"
+                      name="Description"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Date sale price starts&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Date sale price starts&quot;]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Date sale price starts&quot;]"
+                      name="&quot;Date sale price starts&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Date sale price ends&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Date sale price ends&quot;]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Date sale price ends&quot;]"
+                      name="&quot;Date sale price ends&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Tax status&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Tax status&quot;]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Tax status&quot;]"
+                      name="&quot;Tax status&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Tax class&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Tax class&quot;]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Tax class&quot;]"
+                      name="&quot;Tax class&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;In stock?&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;In stock?&quot;]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;In stock?&quot;]"
+                      name="&quot;In stock?&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[Stock]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Stock]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[Stock]"
+                      name="Stock"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Backorders allowed?&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Backorders allowed?&quot;]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Backorders allowed?&quot;]"
+                      name="&quot;Backorders allowed?&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Sold individually?&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Sold individually?&quot;]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Sold individually?&quot;]"
+                      name="&quot;Sold individually?&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Weight (lbs)&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Weight (lbs)&quot;]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Weight (lbs)&quot;]"
+                      name="&quot;Weight (lbs)&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Length (in)&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Length (in)&quot;]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Length (in)&quot;]"
+                      name="&quot;Length (in)&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Width (in)&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Width (in)&quot;]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Width (in)&quot;]"
+                      name="&quot;Width (in)&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Height (in)&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Height (in)&quot;]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Height (in)&quot;]"
+                      name="&quot;Height (in)&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Allow customer reviews?&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Allow customer reviews?&quot;]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Allow customer reviews?&quot;]"
+                      name="&quot;Allow customer reviews?&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Purchase note&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Purchase note&quot;]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Purchase note&quot;]"
+                      name="&quot;Purchase note&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Sale price&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Sale price&quot;]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Sale price&quot;]"
+                      name="&quot;Sale price&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Regular price&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Regular price&quot;]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Regular price&quot;]"
+                      name="&quot;Regular price&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[Categories]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Categories]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[Categories]"
+                      name="Categories"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[Tags]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Tags]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[Tags]"
+                      name="Tags"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Shipping class&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Shipping class&quot;]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Shipping class&quot;]"
+                      name="&quot;Shipping class&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[Images]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Images]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[Images]"
+                      name="Images"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Download limit&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Download limit&quot;]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Download limit&quot;]"
+                      name="&quot;Download limit&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Download expiry days&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Download expiry days&quot;]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Download expiry days&quot;]"
+                      name="&quot;Download expiry days&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[Parent]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Parent]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[Parent]"
+                      name="Parent"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Grouped products&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Grouped products&quot;]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Grouped products&quot;]"
+                      name="&quot;Grouped products&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[Upsells]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Upsells]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[Upsells]"
+                      name="Upsells"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[Cross-sells]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Cross-sells]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[Cross-sells]"
+                      name="Cross-sells"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;External URL&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;External URL&quot;]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;External URL&quot;]"
+                      name="&quot;External URL&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Button text&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Button text&quot;]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Button text&quot;]"
+                      name="&quot;Button text&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[Position]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Position]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[Position]"
+                      name="Position"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Attribute 1 name&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Attribute 1 name&quot;]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Attribute 1 name&quot;]"
+                      name="&quot;Attribute 1 name&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Attribute 1 value(s)&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Attribute 1 value(s)&quot;]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Attribute 1 value(s)&quot;]"
+                      name="&quot;Attribute 1 value(s)&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Attribute 1 visible&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Attribute 1 visible&quot;]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Attribute 1 visible&quot;]"
+                      name="&quot;Attribute 1 visible&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Attribute 1 global&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Attribute 1 global&quot;]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Attribute 1 global&quot;]"
+                      name="&quot;Attribute 1 global&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Attribute 2 name&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Attribute 2 name&quot;]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Attribute 2 name&quot;]"
+                      name="&quot;Attribute 2 name&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Attribute 2 value(s)&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Attribute 2 value(s)&quot;]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Attribute 2 value(s)&quot;]"
+                      name="&quot;Attribute 2 value(s)&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Attribute 2 visible&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Attribute 2 visible&quot;]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Attribute 2 visible&quot;]"
+                      name="&quot;Attribute 2 visible&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Attribute 2 global&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Attribute 2 global&quot;]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Attribute 2 global&quot;]"
+                      name="&quot;Attribute 2 global&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Meta  _wpcom_is_markdown&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Meta  _wpcom_is_markdown&quot;]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Meta  _wpcom_is_markdown&quot;]"
+                      name="&quot;Meta  _wpcom_is_markdown&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Download 1 name&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Download 1 name&quot;]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Download 1 name&quot;]"
+                      name="&quot;Download 1 name&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Download 1 URL&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Download 1 URL&quot;]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Download 1 URL&quot;]"
+                      name="&quot;Download 1 URL&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Download 2 name&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Download 2 name&quot;]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Download 2 name&quot;]"
+                      name="&quot;Download 2 name&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Download 2 URL&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Download 2 URL&quot;]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].Columns[&quot;Download 2 URL&quot;]"
+                      name="&quot;Download 2 URL&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[ID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Type]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Type" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[SKU]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="SKU" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Name]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Published]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Published" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Is featured?&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Is featured?&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Visibility in catalog&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Visibility in catalog&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Short description&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Short description&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Description]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Description" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Date sale price starts&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Date sale price starts&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Date sale price ends&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Date sale price ends&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Tax status&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Tax status&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Tax class&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Tax class&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;In stock?&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;In stock?&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Stock]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Stock" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Backorders allowed?&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Backorders allowed?&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Sold individually?&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Sold individually?&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Weight (lbs)&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Weight (lbs)&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Length (in)&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Length (in)&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Width (in)&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Width (in)&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Height (in)&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Height (in)&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Allow customer reviews?&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Allow customer reviews?&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Purchase note&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Purchase note&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Sale price&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Sale price&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Regular price&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Regular price&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Categories]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Categories" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Tags]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Tags" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Shipping class&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Shipping class&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Images]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Images" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Download limit&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Download limit&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Download expiry days&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Download expiry days&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Parent]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Parent" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Grouped products&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Grouped products&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Upsells]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Upsells" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Cross-sells]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Cross-sells" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;External URL&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;External URL&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Button text&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Button text&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Position]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Position" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Attribute 1 name&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Attribute 1 name&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Attribute 1 value(s)&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Attribute 1 value(s)&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Attribute 1 visible&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Attribute 1 visible&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Attribute 1 global&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Attribute 1 global&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Attribute 2 name&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Attribute 2 name&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Attribute 2 value(s)&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Attribute 2 value(s)&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Attribute 2 visible&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Attribute 2 visible&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Attribute 2 global&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Attribute 2 global&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Meta  _wpcom_is_markdown&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Meta  _wpcom_is_markdown&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Download 1 name&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Download 1 name&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Download 1 URL&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Download 1 URL&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Download 2 name&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Download 2 name&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[&quot;Download 2 URL&quot;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Download 2 URL&quot;" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Erro de Origem de Arquivo Simples]"
+                  isErrorOut="true"
+                  name="Saída de Erro de Origem de Arquivo Simples">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[Coluna de Saída de Erro de Origem de Arquivo Simples]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Coluna de Saída de Erro de Origem de Arquivo Simples"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[Coluna de Saída de Erro de Origem de Arquivo Simples]"
+                      name="Coluna de Saída de Erro de Origem de Arquivo Simples" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Tarefa Fluxo de Dados 1.Paths[Saída de Origem de Arquivo Simples]"
+              endId="Package\Tarefa Fluxo de Dados 1\Destino - sample_products.Inputs[Destination Input]"
+              name="Saída de Origem de Arquivo Simples"
+              startId="Package\Tarefa Fluxo de Dados 1\Origem - sample_products_txt.Outputs[Saída de Origem de Arquivo Simples]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Tarefa SQL de Preparação 1"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{28B7A1B3-7D8A-48E0-BA90-CBEE17B309DA}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tarefa SQL de Preparação 1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F4017A05-A31D-44EA-96FA-58A4888F533B}"
+          SQLTask:SqlStatementSource="CREATE TABLE [dbo].[sample_products] (&#xA;[ID] varchar(50),&#xA;[Type] varchar(50),&#xA;[SKU] varchar(50),&#xA;[Name] varchar(50),&#xA;[Published] varchar(50),&#xA;[&quot;Is featured?&quot;] varchar(50),&#xA;[&quot;Visibility in catalog&quot;] varchar(50),&#xA;[&quot;Short description&quot;] varchar(50),&#xA;[Description] varchar(50),&#xA;[&quot;Date sale price starts&quot;] varchar(50),&#xA;[&quot;Date sale price ends&quot;] varchar(50),&#xA;[&quot;Tax status&quot;] varchar(50),&#xA;[&quot;Tax class&quot;] varchar(50),&#xA;[&quot;In stock?&quot;] varchar(50),&#xA;[Stock] varchar(50),&#xA;[&quot;Backorders allowed?&quot;] varchar(50),&#xA;[&quot;Sold individually?&quot;] varchar(50),&#xA;[&quot;Weight (lbs)&quot;] varchar(50),&#xA;[&quot;Length (in)&quot;] varchar(50),&#xA;[&quot;Width (in)&quot;] varchar(50),&#xA;[&quot;Height (in)&quot;] varchar(50),&#xA;[&quot;Allow customer reviews?&quot;] varchar(50),&#xA;[&quot;Purchase note&quot;] varchar(50),&#xA;[&quot;Sale price&quot;] varchar(50),&#xA;[&quot;Regular price&quot;] varchar(50),&#xA;[Categories] varchar(50),&#xA;[Tags] varchar(50),&#xA;[&quot;Shipping class&quot;] varchar(50),&#xA;[Images] varchar(50),&#xA;[&quot;Download limit&quot;] varchar(50),&#xA;[&quot;Download expiry days&quot;] varchar(50),&#xA;[Parent] varchar(50),&#xA;[&quot;Grouped products&quot;] varchar(50),&#xA;[Upsells] varchar(50),&#xA;[Cross-sells] varchar(50),&#xA;[&quot;External URL&quot;] varchar(50),&#xA;[&quot;Button text&quot;] varchar(50),&#xA;[Position] varchar(50),&#xA;[&quot;Attribute 1 name&quot;] varchar(50),&#xA;[&quot;Attribute 1 value(s)&quot;] varchar(50),&#xA;[&quot;Attribute 1 visible&quot;] varchar(50),&#xA;[&quot;Attribute 1 global&quot;] varchar(50),&#xA;[&quot;Attribute 2 name&quot;] varchar(50),&#xA;[&quot;Attribute 2 value(s)&quot;] varchar(50),&#xA;[&quot;Attribute 2 visible&quot;] varchar(50),&#xA;[&quot;Attribute 2 global&quot;] varchar(50),&#xA;[&quot;Meta  _wpcom_is_markdown&quot;] varchar(50),&#xA;[&quot;Download 1 name&quot;] varchar(50),&#xA;[&quot;Download 1 URL&quot;] varchar(50),&#xA;[&quot;Download 2 name&quot;] varchar(50),&#xA;[&quot;Download 2 URL&quot;] varchar(50)&#xA;)&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{3CF893AA-F894-45AC-A942-8B6DEC21AEE7\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{3CF893AA-F894-45AC-A942-8B6DEC21AEE7}"
+      DTS:From="Package\Tarefa SQL de Preparação 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{3CF893AA-F894-45AC-A942-8B6DEC21AEE7}"
+      DTS:To="Package\Tarefa Fluxo de Dados 1" />
+  </DTS:PrecedenceConstraints>
+</DTS:Executable>
