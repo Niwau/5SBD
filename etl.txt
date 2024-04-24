@@ -1,0 +1,11 @@
+ID,Nome,Tipo,Cor,Tamanho,Preço
+1,Camiseta básica,T-shirt,Branco,P,M
+2,Calça jeans,Calça,Azul,38,100.00
+3,Blusa de lã,Blusa,Cinza,M,75.50
+4,Vestido de verão,Vestido,Floral,P,120.00
+5,Jaqueta de couro,Jaqueta,Preto,G,200.00
+6,Shorts esportivo,Shorts,Azul marinho,M,45.00
+7,Saia plissada,Saia,Rosa,36,60.00
+8,Blazer formal,Blazer,Preto,P,150.00
+9,Regata casual,Regata,Verde,M,30.00
+10,Moletom quente,Moleton,Azul escuro,G,80.00
