@@ -1,0 +1,4 @@
+order-id,order-item-id,purchase-date,payments-date,buyer-email,buyer-name,cpf,buyer-phone-number,sku,product-name,quantity-purchased,currency,item-price,ship-service-level,recipient-name,ship-address-1,ship-address-2,ship-address-3,ship-city,ship-state,ship-postal-code,ship-country,ioss-number
+123456789,1,2024-04-30,2024-04-30,johndoe@example.com,John Doe,123.456.789-10,1234567890,SKU123,UPC123,Example Product 1,2,USD,19.99,Standard,John Doe,123 Main St,,Apartment 1,Anytown,ST,12345,USA,IOSS12345
+123456789,2,2024-04-30,2024-04-30,johndoe@example.com,John Doe,123.456.789-10,1234567890,SKU456,UPC456,Example Product 2,1,USD,29.99,Express,Jane Doe,456 Elm St,,Suite 200,Another City,CA,67890,USA,IOSS67890
+987654321,1,2024-04-30,2024-04-30,janedoe@example.com,Jane Doe,987.654.321-10,0987654321,SKU789,UPC789,Example Product 3,3,USD,39.99,Standard,Jane Doe,789 Oak St,,Unit 5,Yet Another City,NY,54321,USA,IOSS54321
