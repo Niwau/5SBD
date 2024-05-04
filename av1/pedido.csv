@@ -1,0 +1,4 @@
+order-id,order-item-id,purchase-date,payments-date,buyer-email,buyer-name,cpf,buyer-phone-number,sku,upc,product-name,quantity-purchased,currency,item-price,ship-service-level,recipient-name,ship-address-1,ship-address-2,ship-address-3,ship-city,ship-state,ship-postal-code,ship-country,ioss-number
+1,1,2024-05-01,2024-05-02,test@example.com,John Doe,123.456.789-00,123-456-7890,SKU123,UPC123,Product A,2,USD,10.99,Standard Shipping,John Doe,123 Main St,,Apt 101,Anytown,CA,12345,USA,IOSS123
+1,2,2024-05-01,2024-05-02,test@example.com,John Doe,123.456.789-00,123-456-7890,SKU456,UPC456,Product B,1,USD,19.99,Standard Shipping,John Doe,123 Main St,,Apt 101,Anytown,CA,12345,USA,IOSS123
+2,1,2024-05-02,2024-05-03,another@example.com,Jane Smith,987.654.321-00,987-654-3210,SKU789,UPC789,Product C,3,USD,15.49,Express Shipping,Jane Smith,456 Elm St,,Suite 202,Othercity,NY,54321,USA,IOSS456
