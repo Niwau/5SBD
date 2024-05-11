@@ -1,4 +1,5 @@
-order-id,order-item-id,purchase-date,payments-date,buyer-email,buyer-name,cpf,buyer-phone-number,sku,upc,product-name,quantity-purchased,currency,item-price,ship-service-level,recipient-name,ship-address-1,ship-address-2,ship-address-3,ship-city,ship-state,ship-postal-code,ship-country,ioss-number
-1,1,2024-05-01,2024-05-02,test@example.com,John Doe,123.456.789-00,123-456-7890,SKU123,UPC123,Product A,2,USD,10.99,Standard Shipping,John Doe,123 Main St,,Apt 101,Anytown,CA,12345,USA,IOSS123
-1,2,2024-05-01,2024-05-02,test@example.com,John Doe,123.456.789-00,123-456-7890,SKU456,UPC456,Product B,1,USD,19.99,Standard Shipping,John Doe,123 Main St,,Apt 101,Anytown,CA,12345,USA,IOSS123
-2,1,2024-05-02,2024-05-03,another@example.com,Jane Smith,987.654.321-00,987-654-3210,SKU789,UPC789,Product C,3,USD,15.49,Express Shipping,Jane Smith,456 Elm St,,Suite 202,Othercity,NY,54321,USA,IOSS456
+order-id,order-item-id,purchase-date,payments-date,buyer-email,buyer-name,cpf,buyer-phone-number,sku,product-name,quantity-purchased,currency,item-price,ship-service-level,recipient-name,ship-address-1,ship-address-2,ship-address-3,ship-city,ship-state,ship-postal-code,ship-country,ioss-number
+1001,1,2024-05-10,2024-05-11,teste1@gmail.com,Cliente 1,123.456.789-10,(11) 98765-4321,SKU001,Produto 1,2,BRL,50.00,Standard,Cliente 1,Rua Teste,123,Apt 101,São Paulo,SP,01234-567,Brazil,123456789
+1002,1,2024-05-10,2024-05-11,teste2@gmail.com,Cliente 2,987.654.321-00,(22) 12345-6789,SKU002,Produto 2,1,BRL,30.00,Express,Cliente 2,Rua Exemplo,456,,Rio de Janeiro,RJ,98765-432,Brazil,987654321
+1002,2,2024-05-10,2024-05-11,teste2@gmail.com,Cliente 2,987.654.321-00,(22) 12345-6789,SKU003,Produto 3,3,BRL,20.00,Express,Cliente 2,Rua Exemplo,456,,Rio de Janeiro,RJ,98765-432,Brazil,987654321
+1003,1,2024-05-11,2024-05-12,teste3@gmail.com,Cliente 3,111.222.333-44,(33) 55555-5555,SKU001,Produto 1,5,BRL,50.00,Standard,Cliente 3,Rua Testando,789,,Belo Horizonte,MG,65432-109,Brazil,111222333
