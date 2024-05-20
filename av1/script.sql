@@ -175,8 +175,34 @@ INSERT INTO StockMovements (product_id, quantity, price, movement_type, movement
     JOIN Orders ON Orders.order_id = OrderItems.order_id
     ORDER BY OrderItems.purchased_quantity * OrderItems.item_price DESC;
 
+-- Adicionando uma restrição de unicidade na coluna product_id na tabela Restocking
+ALTER TABLE Restocking
+ADD CONSTRAINT unique_product_id UNIQUE (product_id);
+
 -- VERIFICAR E ATUALIZAR O ESTOQUE
 
+-- Atualizar a quantidade disponível no estoque para cada produto com base nas movimentações de saída registradas
+UPDATE Products
+SET available_quantity = available_quantity - sm.quantity
+FROM StockMovements sm
+WHERE Products.id = sm.product_id
+AND sm.movement_type = 'SAÍDA';
+
+-- Verificar se a quantidade em estoque é suficiente para as movimentações de saída
+-- Caso contrário, registrar uma necessidade de reabastecimento
+INSERT INTO Restocking (product_id, needed_quantity)
+SELECT
+    p.id,
+    ABS(p.available_quantity) AS needed_quantity
+FROM Products p
+WHERE p.available_quantity < 0
+ON CONFLICT (product_id) DO UPDATE
+SET needed_quantity = EXCLUDED.needed_quantity;
+
+-- Ajustar o estoque para não ficar negativo
+UPDATE Products
+SET available_quantity = 0
+WHERE available_quantity < 0;
 
 -- LIMPANDO A TABELA TEMPORÁRIA
 TRUNCATE TABLE OrderLoader;
