@@ -99,7 +99,7 @@ CREATE TEMP TABLE IF NOT EXISTS OrderLoader (
 );
 
 -- CARREGA O CSV DE PEDIDOS PARA A TABELA TEMPORÁRIA
-COPY OrderLoader FROM 'C:\Users\Guilherme\Desktop\pedido.csv' DELIMITER ',' CSV HEADER;
+COPY OrderLoader FROM 'C:\Users\Guilherme\Desktop\5SBD\av1\pedido.csv' DELIMITER ',' CSV HEADER;
 
 -- INSERINDO OS CLIENTES QUE NÃO ESTÃO CADASTRADOS
 INSERT INTO Customers (cpf, name, email, phone)
