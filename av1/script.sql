@@ -99,7 +99,7 @@ CREATE TEMP TABLE IF NOT EXISTS OrderLoader (
 );
 
 -- CARREGA O CSV DE PEDIDOS PARA A TABELA TEMPORÁRIA
-COPY OrderLoader FROM 'C:\Users\Guilherme\Desktop\5SBD\av1\pedido.csv' DELIMITER ',' CSV HEADER;
+\COPY OrderLoader FROM 'C:\Users\Guilherme\Desktop\5SBD\av1\pedido.csv' DELIMITER ',' CSV HEADER;
 
 -- INSERINDO OS CLIENTES QUE NÃO ESTÃO CADASTRADOS
 INSERT INTO Customers (cpf, name, email, phone)
@@ -206,3 +206,6 @@ WHERE available_quantity < 0;
 
 -- LIMPANDO A TABELA TEMPORÁRIA
 TRUNCATE TABLE OrderLoader;
+
+-- GERANDO CSV DAS COMPRAS
+\COPY (SELECT * FROM Restocking) TO 'C:\Users\Guilherme\Desktop\5SBD\av1\compras.csv' DELIMITER ',' CSV HEADER;
