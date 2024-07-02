@@ -1,0 +1,73 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Order {
+  id                 Int         @id @default(autoincrement())
+  order_id           Int      @unique
+  purchase_date      DateTime
+  payments_date      DateTime
+  buyer_email        String
+  buyer_name         String
+  cpf                String
+  buyer_phone_number String
+  ship_address_1     String
+  ship_address_2     String
+  ship_address_3     String
+  ship_city          String
+  ship_state         String
+  ship_postal_code   String
+  ship_country       String
+  status             Int
+  order_items        OrderItem[]
+}
+
+model OrderItem {
+  id                 Int    @id @default(autoincrement())
+  order_id           Int
+  sku                String
+  product_name       String
+  purchased_quantity Int
+  currency           String
+  item_price         Float
+  order              Order  @relation(fields: [order_id], references: [id])
+}
+
+model Customer {
+  id    Int    @id @default(autoincrement())
+  cpf   String @unique
+  name  String
+  email String
+  phone String
+}
+
+model Product {
+  id                 Int             @id @default(autoincrement())
+  sku                String          @unique
+  name               String
+  available_quantity Int             @default(0)
+  stock_movement      StockMovement[]
+  restocking          Restocking[]
+}
+
+model StockMovement {
+  id            Int      @id @default(autoincrement())
+  product_id    Int
+  quantity      Int
+  price         Float
+  movement_type Int
+  movement_date DateTime
+  product       Product  @relation(fields: [product_id], references: [id])
+}
+
+model Restocking {
+  id            Int      @id @default(autoincrement())
+  product_id    Int
+  needed_quantity Int
+  product      Product  @relation(fields: [product_id], references: [id])
+}
