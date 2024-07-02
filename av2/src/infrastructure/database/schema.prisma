@@ -9,9 +9,8 @@ datasource db {
 
 model Order {
   id                 Int         @id @default(autoincrement())
-  order_id           Int      @unique
   purchase_date      DateTime
-  payments_date      DateTime
+  payments_date      DateTime?
   buyer_email        String
   buyer_name         String
   cpf                String
@@ -51,18 +50,7 @@ model Product {
   sku                String          @unique
   name               String
   available_quantity Int             @default(0)
-  stock_movement      StockMovement[]
   restocking          Restocking[]
-}
-
-model StockMovement {
-  id            Int      @id @default(autoincrement())
-  product_id    Int
-  quantity      Int
-  price         Float
-  movement_type Int
-  movement_date DateTime
-  product       Product  @relation(fields: [product_id], references: [id])
 }
 
 model Restocking {
