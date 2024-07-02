@@ -22,7 +22,6 @@ model Order {
   ship_state         String
   ship_postal_code   String
   ship_country       String
-  status             Int
   order_items        OrderItem[]
 }
 

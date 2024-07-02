@@ -1,5 +1,5 @@
 import { Customer } from "../domain/entities/customer";
-import { Order, OrderStatus } from "../domain/entities/order";
+import { Order } from "../domain/entities/order";
 import { OrderItem } from "../domain/entities/order-item";
 import { Product } from "../domain/entities/product";
 import { OrderService } from "../infrastructure/http/client";
@@ -53,9 +53,6 @@ async function main() {
       .setShipCountry(currentOrder["ship-country"])
       .setShipState(currentOrder["ship-state"])
       .setShipPostalCode(currentOrder["ship-postal-code"])
-      .setStatus(
-        isPaid ? OrderStatus.PAYMENT_APPROVED : OrderStatus.PAYMENT_PENDING
-      );
 
     await orderRepository.add(order);
 

@@ -19,7 +19,6 @@ export class OrderRepository implements OrderRepositoryInterface {
         ship_address_3: order.getShipAddress3(),
         ship_city: order.getShipCity(),
         ship_country: order.getShipCountry(),
-        status: order.getStatus(),
         purchase_date: order.getPurchaseDate(),
         payments_date: order.getPaymentsDate(),
         ship_postal_code: order.getShipPostalCode(),

@@ -1,8 +1,3 @@
-export enum OrderStatus {
-  PAYMENT_PENDING = 0,
-  PAYMENT_APPROVED = 1
-}
-
 export class Order {
   private id?: number;
   private purchase_date: Date;
@@ -18,7 +13,6 @@ export class Order {
   private ship_state: string;
   private ship_postal_code: string;
   private ship_country: string;
-  private status: OrderStatus;
 
   constructor() {
     this.purchase_date = new Date();
@@ -34,7 +28,6 @@ export class Order {
     this.ship_state = '';
     this.ship_postal_code = '';
     this.ship_country = '';
-    this.status = OrderStatus.PAYMENT_PENDING;
   }
 
   getPurchaseDate() {
@@ -87,10 +80,6 @@ export class Order {
 
   getShipCountry() {
     return this.ship_country;
-  }
-
-  getStatus() {
-    return this.status;
   }
 
   setPurchaseDate(purchase_date: Date) {
@@ -155,11 +144,6 @@ export class Order {
 
   setShipCountry(ship_country: string) {
     this.ship_country = ship_country;
-    return this;
-  }
-
-  setStatus(status: OrderStatus) {
-    this.status = status;
     return this;
   }
 }
