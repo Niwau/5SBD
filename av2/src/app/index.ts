@@ -51,6 +51,8 @@ async function main() {
       .setShipAddress3(currentOrder["ship-address-3"])
       .setShipCity(currentOrder["ship-city"])
       .setShipCountry(currentOrder["ship-country"])
+      .setShipState(currentOrder["ship-state"])
+      .setShipPostalCode(currentOrder["ship-postal-code"])
       .setStatus(
         isPaid ? OrderStatus.PAYMENT_APPROVED : OrderStatus.PAYMENT_PENDING
       );
