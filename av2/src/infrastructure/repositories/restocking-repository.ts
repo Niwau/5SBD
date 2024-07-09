@@ -3,6 +3,7 @@ import { database } from "../database";
 
 interface RestockingRepositoryInterface {
   add: (product: Product, needed_quantity: number) => Promise<void>;
+  getAll: () => Promise<any>;
 }
 
 export class RestockingRepository implements RestockingRepositoryInterface {
@@ -18,5 +19,9 @@ export class RestockingRepository implements RestockingRepositoryInterface {
         },
       },
     });
+  }
+
+  getAll() {
+    return database.restocking.findMany();
   }
 }

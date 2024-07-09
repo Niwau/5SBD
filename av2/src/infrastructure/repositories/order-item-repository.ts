@@ -3,6 +3,7 @@ import { database } from "../database";
 
 interface OrderItemRepositoryInterface {
   add: (orderItem: OrderItem) => Promise<void>;
+  getAll: () => Promise<any>;
 }
 
 export class OrderItemRepository implements OrderItemRepositoryInterface  {
@@ -18,5 +19,9 @@ export class OrderItemRepository implements OrderItemRepositoryInterface  {
         item_price: orderItem.getItemPrice(),
       }
     })
+  }
+
+  async getAll() {
+    return await database.orderItem.findMany();
   }
 }

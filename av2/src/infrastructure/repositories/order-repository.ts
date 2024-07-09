@@ -3,6 +3,7 @@ import { database } from "../database";
 
 interface OrderRepositoryInterface {
   add: (order: Order) => Promise<void>;
+  getAll: () => Promise<any>;
 }
 
 export class OrderRepository implements OrderRepositoryInterface {
@@ -25,5 +26,8 @@ export class OrderRepository implements OrderRepositoryInterface {
         ship_state: order.getShipState(),
       }
     })
+  }
+  getAll() {
+    return database.order.findMany();
   }
 }

@@ -4,6 +4,7 @@ import { database } from "../database";
 interface CustomerRepositoryInterface {
   add: (customer: Customer) => Promise<void>;
   getByCPF: (cpf: string) => Promise<Customer | null>;
+  getAll: () => Promise<any>;
 }
 
 export class CustomerRepository implements CustomerRepositoryInterface {
@@ -35,5 +36,9 @@ export class CustomerRepository implements CustomerRepositoryInterface {
       .setCPF(customer.cpf)
       .setPhone(customer.phone)
       .setEmail(customer.email);
+  }
+
+  async getAll() {
+    return await database.customer.findMany();
   }
 }

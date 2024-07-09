@@ -9,6 +9,9 @@ import { OrderRepository } from "../infrastructure/repositories/order-repository
 import { ProductRepository } from "../infrastructure/repositories/product-repository";
 import { RestockingRepository } from "../infrastructure/repositories/restocking-repository";
 import { database } from "../infrastructure/database";
+import express from 'express';
+
+const app = express();
 
 async function main() {
   const restockingRepository = new RestockingRepository();
@@ -19,6 +22,27 @@ async function main() {
   const orderService = new OrderService();
 
   const orders = await orderService.getAll()
+
+  app.get('/restocking', async (req, res) => {
+    res.json(await restockingRepository.getAll());
+  })
+
+  app.get('/order-item', async (req, res) => {
+    res.json(await orderItemRepository.getAll());
+  });
+
+  app.get('/customer', async (req, res) => {
+    res.json(await customerRepositoy.getAll());
+  });
+
+  app.get('/product', async (req, res) => {
+    res.json(await productRepository.getAll());
+  });
+
+  app.get('/order', async (req, res) => {
+    res.json(await orderRepository.getAll());
+  });
+
 
   console.log(`\n📦 Importando ${orders.data.length} pedidos...`)
 
@@ -109,4 +133,8 @@ main().then(() => {
 })
 .finally(() => {
   database.$disconnect();
+});
+
+app.listen(3000, () => {
+  console.log('🚀 Server is running on port 3000');
 });

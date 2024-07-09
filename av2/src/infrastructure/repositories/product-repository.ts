@@ -5,6 +5,7 @@ interface ProductRepositoryInterface {
   add: (product: Product) => Promise<void>;
   getBySku: (sku: string) => Promise<Product | null>;
   update: (product: Product) => Promise<void>;
+  getAll: () => Promise<any>;
 }
 
 export class ProductRepository implements ProductRepositoryInterface {
@@ -47,5 +48,9 @@ export class ProductRepository implements ProductRepositoryInterface {
         available_quantity: product.getAvailableQuantity(),
       },
     });
+  }
+
+  getAll() {
+    return database.product.findMany();
   }
 }
